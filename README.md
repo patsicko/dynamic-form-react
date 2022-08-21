@@ -1,9 +1,8 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
+  # This project was built for learning purpose to master how you can make a dynamic form.
+  
+  By MANIBAHO Patrick
+  
+  
 In the project directory, you can run:
 
 ### `npm start`
