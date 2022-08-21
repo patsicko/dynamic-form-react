@@ -309,10 +309,6 @@ And also in the form tag:
 ```
 If we submit, we will see our data in the console:
 
-![image](https://user-images.githubusercontent.com/63926982/185786695-3ae00ac4-b334-4051-a6a8-890f3704491f.png)
-
-![image](https://user-images.githubusercontent.com/63926982/185786697-a6f6d8f0-cb56-4a80-b502-79fdaf38355f.png)
-
 # How to Remove the fields using a Remove Button
 
 Now let's create a Button for removing these fields if we don't want them.
@@ -342,8 +338,6 @@ Now let's create a Button for removing these fields if we don't want them.
       </form>
       
       ```
-      
-      ![image](https://user-images.githubusercontent.com/63926982/185786714-9e02145c-9ab5-4a11-8c35-064297758278.png)
       
       We need a function as well.
       ```
