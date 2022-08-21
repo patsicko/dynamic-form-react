@@ -218,3 +218,174 @@ const handleFormChange = (index, event) => {
 For example, suppose we are typing in the input field with **index 0**. So, we are specifying the index in data, and the property name, using **event.target.name**. And inside this data index, we are storing the values from input fields using event.target.value.
 
 Now, we need to store this data back inside the **inputFields** array using the ***setInputFields method***.
+
+```
+
+const handleFormChange = (index, event) => {
+   let data = [...inputFields];
+   data[index][event.target.name] = event.target.value;
+   setInputFields(data);
+}
+
+```
+
+Now, if we type something in the input fields, it will show up in the input fields.
+
+# How to Add More Form Fields
+
+Let's create a button to add more form fields.
+```
+<button>Add More..</button>
+
+```
+And a function, too, that will be triggered when this button is clicked.
+```
+
+const addFields = () => {
+    
+}
+
+```
+Let's add the function to the button via an onClick event.
+```
+
+<button onClick={addFields}>Add More..</button>
+
+```
+Now, in the addFields function, we need to create an object. And every time we click the button, it will be pushed to the inputFields state, thus creating a new input field.
+```
+
+const addFields = () => {
+    let newfield = { name: '', age: '' }
+}
+
+```
+Then set this newField inside the inputFields state.
+```
+
+const addFields = () => {
+    let newfield = { name: '', age: '' }
+
+    setInputFields([...inputFields, newfield])
+}
+
+```
+
+Here, we are also setting the existing **inputFields** using the spread operator, in conjunction with the newfield.
+
+If we click the Add Field button now, it will create a new input field.
+
+![image](https://user-images.githubusercontent.com/63926982/185786630-4ac9deba-11de-43d9-9b85-0ab9a5f10428.png)
+
+
+# How to Create a Submit Button
+
+Let's create a Submit button and one function to see our data when we submit the form.
+```
+<button>Submit</button>
+
+```
+
+We also need a function that will be triggered when we click this button. It will log the data in the console, from the input fields. It also has a method called **e.preventDefault()** that will prevent the page from getting refreshed.
+
+```
+
+const submit = (e) => {
+    e.preventDefault();
+    console.log(inputFields)
+}
+
+```
+Add this function to the Submit button:
+```
+
+<button onClick={submit}>Submit</button>
+
+```
+And also in the form tag:
+```
+<form onSubmit={submit}>
+
+```
+If we submit, we will see our data in the console:
+
+![image](https://user-images.githubusercontent.com/63926982/185786695-3ae00ac4-b334-4051-a6a8-890f3704491f.png)
+
+![image](https://user-images.githubusercontent.com/63926982/185786697-a6f6d8f0-cb56-4a80-b502-79fdaf38355f.png)
+
+# How to Remove the fields using a Remove Button
+
+Now let's create a Button for removing these fields if we don't want them.
+
+```
+
+<form>
+        {inputFields.map((input, index) => {
+          return (
+            <div key={index}>
+              <input
+                name='name'
+                placeholder='Name'
+                value={input.name}
+                onChange={event => handleFormChange(index, event)}
+              />
+              <input
+                name='age'
+                placeholder='Age'
+                value={input.age}
+                onChange={event => handleFormChange(index, event)}
+              />
+              <button>Remove</button>
+            </div>
+          )
+        })}
+      </form>
+      
+      ```
+      
+      ![image](https://user-images.githubusercontent.com/63926982/185786714-9e02145c-9ab5-4a11-8c35-064297758278.png)
+      
+      We need a function as well.
+      ```
+
+const removeFields = () => {
+
+}
+
+```
+So, assign this function to the Remove button.
+```
+<button onClick={() => removeFields(index)}>Remove</button>
+```
+We are passing the index as a parameter, which is the index of input fields.
+
+Then, receive this index in the function.
+
+```
+
+const removeFields = (index) => {
+  
+}
+
+```
+And just like before, we need to create a new variable and store the inputFields state in that new variable.
+
+```
+const removeFields = (index) => {
+    let data = [...inputFields];
+}
+
+```
+Then, we need to splice this data variable by the index. Then we need to store it in the inputFields state using setInputFields.
+
+```
+
+const removeFields = (index) => {
+    let data = [...inputFields];
+    data.splice(index, 1)
+    setInputFields(data)
+}
+
+```
+Now, if we click remove, it will remove that form field.
+
