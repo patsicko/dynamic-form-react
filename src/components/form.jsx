@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import { Button } from "react-bootstrap";
 
 
 import styles from "./form.module.css";
@@ -40,6 +41,12 @@ const submit=(e)=>{
     console.log(inputs);
 }
 
+const remove=(index)=>{
+
+  const data=[...inputs];
+  data.splice(index,1);
+  setInputs(data);
+}
 
   return (
     <>
@@ -55,8 +62,8 @@ return(
      <form-group><label htmlFor=""></label><input type="text" value={input.lastName} onChange={event=>handleForm(index,event)}  name="lastName" id="lastName" placeholder="Last name" className="form-control" /></form-group>
      <form-group><label htmlFor=""></label><input type="text" value={input.email} onChange={event=>handleForm(index,event)}  name="email" id="email"  placeholder="Email" className="form-control" /></form-group>
      <form-group><label htmlFor=""></label><input type="text" value={input.password} onChange={event=>handleForm(index,event)}  name="password" id="password"  placeholder="Password" className="form-control" /></form-group> <br /> 
-     <button type="submit" onClick={submit}>Submit</button>
-     <button>Remove</button>
+     <Button type="submit" onClick={submit}>Submit</Button> &nbsp;&nbsp;&nbsp;&nbsp;
+     <Button variant="danger" onClick={()=>remove(index)}>Remove</Button>
 
    </form>
     
@@ -67,7 +74,7 @@ return(
 
    }
   
-  <form-group><button  onClick={(e)=>addNew(e)}>Add more...</button></form-group><br /> <br /> 
+  <form-group><Button  onClick={(e)=>addNew(e)}>Add more...</Button></form-group><br /> <br /> 
    
     </>
   )
