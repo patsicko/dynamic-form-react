@@ -56,12 +56,12 @@ return(
 <form className={styles.form}  key={index}>
    
    <h1>Login</h1>
-     <form-group><label htmlFor=""></label><input type="text" value={input.firstName} onChange={event=>handleForm(index,event)}  name="firstName" id="firstName" placeholder="First name" className="form-control" />
+     <form-group><label htmlFor="Fname">First name</label><input type="text" value={input.firstName} onChange={event=>handleForm(index,event)}  name="firstName" id="Fname"  className="form-control" />
   
      </form-group>
-     <form-group><label htmlFor=""></label><input type="text" value={input.lastName} onChange={event=>handleForm(index,event)}  name="lastName" id="lastName" placeholder="Last name" className="form-control" /></form-group>
-     <form-group><label htmlFor=""></label><input type="text" value={input.email} onChange={event=>handleForm(index,event)}  name="email" id="email"  placeholder="Email" className="form-control" /></form-group>
-     <form-group><label htmlFor=""></label><input type="text" value={input.password} onChange={event=>handleForm(index,event)}  name="password" id="password"  placeholder="Password" className="form-control" /></form-group> <br /> 
+     <form-group><label htmlFor="lname">Last name</label><input type="text" value={input.lastName} onChange={event=>handleForm(index,event)}  name="lastName" id="lname"  className="form-control" /></form-group>
+     <form-group><label htmlFor="email">Email</label><input type="text" value={input.email} onChange={event=>handleForm(index,event)}  name="email" id="email"   className="form-control" /></form-group>
+     <form-group><label htmlFor="password">Password</label><input type="text" value={input.password} onChange={event=>handleForm(index,event)}  name="password" id="password"   className="form-control" /></form-group> <br /> 
      <Button type="submit" onClick={submit}>Submit</Button> &nbsp;&nbsp;&nbsp;&nbsp;
      <Button variant="danger" onClick={()=>remove(index)}>Remove</Button>
 
